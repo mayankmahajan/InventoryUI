@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphic version="2.0" viewHeight="16" viewWidth="16" ai:appVersion="16.0.4.691" ATE:version="1.0.0" flm:version="1.0.0" d:using="" xmlns="http://ns.adobe.com/fxg/2008" xmlns:ATE="http://ns.adobe.com/ate/2009" xmlns:ai="http://ns.adobe.com/ai/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt" xmlns:flm="http://ns.adobe.com/flame/2008">
+  <Library/>
+  <Group blendMode="normal" d:layerType="page" d:pageHeight="16" d:pageWidth="16" d:type="layer" d:userLabel="Artboard 1">
+    <Group d:type="layer" d:userLabel="Layer 1">
+      <Group alpha="0.2" ai:seqID="1" flm:isolated="false">
+        <Ellipse width="16" height="16" ai:seqID="2">
+          <fill>
+            <SolidColor color="#25373E"/>
+          </fill>
+        </Ellipse>
+        <Group x="3.19287" y="3.25879" ai:seqID="3">
+          <Path x="3.37372" y="1.1449" winding="nonZero" ai:seqID="4" data="M3.89923 0.668091C3.0086 -0.223022 1.55792 -0.223022 0.666805 0.668091 -0.0846601 1.41858 -0.199894 2.56604 0.316219 3.44299 0.411922 3.6051 0.527156 3.76038 0.666805 3.90002 0.806453 4.03967 0.961727 4.15491 1.12384 4.2511 2.0003 4.76624 3.14825
+ 4.651 3.89923 3.90002 4.79083 3.00891 4.79083 1.5592 3.89923 0.668091Z"/>
+          <Path y="-6.10352e-05" winding="nonZero" ai:seqID="5" data="M8.08154 1.00446C6.74268 -0.3349 4.57129 -0.3349 3.23242 1.00494 2.03125 2.20514 1.91162 4.0733 2.86475 5.41266L0 8.2774 0.808105 9.08502 3.67334 6.22174C5.01172 7.17389 6.88135 7.05377 8.08154 5.85358 9.42041 4.51373 9.42041 2.34283 8.08154 1.00446Z
+M4.49756 5.39606C4.33545 5.29987 4.18018 5.18463 4.04053 5.04498 3.90088 4.90533 3.78564 4.75006 3.68994 4.58795 3.17383 3.711 3.28906 2.56354 4.04053 1.81305 4.93164 0.921936 6.38232 0.921936 7.27295 1.81305 8.16455 2.70416 8.16455 4.15387 7.27295
+ 5.04498 6.52197 5.79596 5.37402 5.91119 4.49756 5.39606Z">
+            <fill>
+              <SolidColor color="#FFFFFF"/>
+            </fill>
+          </Path>
+        </Group>
+      </Group>
+    </Group>
+  </Group>
+  <Private/>
+</Graphic>

@@ -1,0 +1,99 @@
+<br>
+  <div class='row vdivide'>
+  <div class="col-md-3"  >
+
+  <div style="margin-top:20px" >
+    <p id ='apiTypeText' style="font-style:italic; margin-bottom:5px"><b><i>API Type</i></b></p>
+    <select id = 'apiType' ng-init = "changeDataType()" ng-model="selectedDataType" ng-change="changeDataType()" style="width:170px">
+        <option data-ng-repeat="c in dataTypes" value="{{c.key}}" ng-selected="c.value=='Data'">{{c.value}}</option>
+    </select>
+  </div>
+
+  <div style="margin-top:20px" >
+    <p id ='apiNameText' style="font-style:italic; margin-bottom:5px"><b><i>API Name</i></b></p>
+    <select  id = 'apiName' ng-init = "changeAPIType()" ng-model="selectedAPI" ng-change="changeAPIType({{c}})" style="width:170px;margin-top:-10px;margin-bottom:20px">
+        <option data-ng-repeat="c in apiList" value="{{c}}" ng-selected="c=='subscriberdatakpi' || c=='subscribervoicekpi' || c== 'subscribersmskpi'" >{{c}}</option>
+    </select>
+  </div>
+
+  </div>
+
+
+<div class="col-md-1" />
+<div class="col-md-8">
+<div class="dummyForm"> 
+    <form class="form1-signin" method="get" role="form" id='dummyForm'  ng-submit="onsubmit(this)" >
+      
+       <div class='row' style="margin-top:20px">
+
+         <div ng-repeat="c in this.priAtt" class="col-md-4" >
+            <p style="font-style:italic; margin-bottom:5px">{{c.key}}</p>
+            <input type="text" name="{{c.key}}" id="{{c.id}}" class="form1-control" value="{{c.value}}" style="width:200px; font-style:italic" ng-focus = "onFocus(c.id)"/>
+        </div>
+
+       </div>
+       <div class='row' style="margin-top:10px">
+         <div ng-repeat="c in this.secAtt"  class="col-md-4" >
+            <p style="font-style:italic; margin-bottom:5px">{{c.key}}</p>
+            <input type="text" name="{{c.key}}" id="{{c.id}}" class="form1-control" value="{{c.value}}"  style="width:200px; font-style:italic" ng-focus = "onFocus(c.id)"/>           
+         </div>
+       </div>
+       
+        <div class='row' style="margin-top:10px">
+           <div class="col-md-2" />
+            <div class="col-md-2" />
+             <div class="col-md-2" />
+             <div class="col-md-2" />
+          <div class="col-md-2" >
+            <button id= 'resetData' class="btn btn-lg btn-primary btn-block btn-reset" ng-click="onReset(this)" type="reset" >Reset</button>  
+          </div>
+          <div class="col-md-2" >
+            <button id= 'fetchData' class="btn btn-lg btn-primary btn-block btn-reset" type="submit" >FetchData</button>  
+          </div>
+        </div>              
+    </form>
+</div>
+</div>
+</div>
+
+
+
+
+<div class='chartbody' id = 'chartBodyID'>
+   
+     <script src="Scripts/d3.min.js"></script> 
+      <!--tooltip in d3-->
+     <script src="Scripts/d3.tip.v0.6.3.js"></script>
+       <script type="text/javascript" src='components/chart/bar/bar.js'></script>
+     <script type="text/javascript" src='components/chart/legend/legend.js'></script>
+
+      <script src="components/SlickGrid/lib/firebugx.js"></script>
+
+      <script src="components/SlickGrid/lib/jquery-1.7.min.js"></script>
+      <script src="components/SlickGrid/lib/jquery-ui-1.8.16.custom.min.js"></script>
+      <script src="components/SlickGrid/lib/jquery.event.drag-2.2.js"></script>
+     <!--  // <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script> -->
+      <script src="components/SlickGrid/lib/jquery.event.drop-2.2.js"></script>
+      <script src="components/SlickGrid/slick.core.js"></script>
+      <script src="components/SlickGrid/plugins/slick.cellrangeselector.js"></script>
+      <script src="components/SlickGrid/plugins/slick.cellselectionmodel.js"></script>
+      <script src="components/SlickGrid/plugins/slick.rowselectionmodel.js"></script>
+      <script src="components/SlickGrid/plugins/slick.autotooltips.js"></script>
+      <script src="components/SlickGrid/slick.formatters.js"></script>
+      <script src="components/SlickGrid/slick.editors.js"></script>
+      <script src="components/SlickGrid/slick.grid.js"></script>
+      <script src="components/SlickGrid/slick.compositeeditor.js"></script>
+<hr>
+<div id="myGrid" />
+
+<hr>
+<div id='tabGroup'  >
+    <nav>
+    <!-- <a href="" onclick="return LineChartResponseHandler(rawData,this.timeSeries)" ng-repeat="timeSeries in this.chartData">{{timeSeries}} </a> -->
+    <button id = {{timeSeries}} ng-click='LineChartResponseHandler(rawData,this.timeSeries)' ng-repeat="timeSeries in this.chartData">{{timeSeries}}</button> 
+    </nav>       
+</div>
+
+<div id="chart_div" ></div>
+</div>
+

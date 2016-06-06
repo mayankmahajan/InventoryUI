@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="19px" height="19px" viewBox="0 0 19 19" enable-background="new 0 0 19 19" xml:space="preserve">
+<symbol  id="anomaly" viewBox="-9.5 -9.5 19 19">
+	<path fill="none" stroke="#A3B7C1" d="M5.588,0c0-3.088-2.502-5.589-5.588-5.589S-5.588-3.088-5.588,0
+		c0,3.085,2.502,5.588,5.588,5.588S5.588,3.085,5.588,0z"/>
+	<path fill="#35BDB2" d="M2.519,0c0-1.392-1.128-2.52-2.519-2.52S-2.519-1.392-2.519,0c0,1.391,1.128,2.518,2.519,2.518
+		S2.519,1.391,2.519,0z"/>
+	<path fill="none" stroke="#E1E6E4" d="M9,0c0-4.971-4.029-9-9-9s-9,4.029-9,9c0,4.97,4.029,9,9,9S9,4.97,9,0z"/>
+</symbol>
+<g>
+	<use xlink:href="#anomaly"  width="19" height="19" x="-9.5" y="-9.5" transform="matrix(1 0 0 -1 9.5 9.5)" overflow="visible"/>
+</g>
+</svg>

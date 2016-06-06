@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="HTML5 TMO Test" timestamp="2015-09-15T23:07:08" hostname="localhost" time="4.187" errors="0" tests="1" skipped="0" disabled="0" failures="51">
+  <testcase classname="HTML5 TMO Test" name="Getting data for VOICE" time="4.185">
+   <failure type="exception" message="Failed: undefined is not a function"><![CDATA[TypeError: undefined is not a function
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:66:20
+    at /usr/local/lib/node_modules/protractor/lib/element.js:683:16
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)
+From: Task: Run beforeEach in control flow
+    at Object.<anonymous> (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
+    at attemptAsync (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1819:24)
+    at QueueRunner.run (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1774:9)
+    at QueueRunner.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1762:10)
+    at Spec.Env.queueRunnerFactory (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:627:35)
+    at Spec.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:353:10)
+    at Object.fn (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:2360:37)
+    at attemptAsync (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1819:24)
+    at QueueRunner.run (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1774:9)
+    at QueueRunner.execute (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1762:10)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (/Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:24:3)
+    at addSpecsToSuite (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:743:25)
+    at Env.describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:713:7)
+    at jasmineInterface.describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3219:18)
+    at Object.<anonymous> (/Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:18:1)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Data&apos; to equal &apos;sss&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:84:56)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new promise.Promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:355:5)
+    at controlFlowExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.ControlFlow.runEventLoop_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1755:8)
+    at [object Object].<anonymous> (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2056:12)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;subscriberdatakpi&apos; to equal &apos;sss&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:85:51)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new promise.Promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:355:5)
+    at controlFlowExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.ControlFlow.runEventLoop_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1755:8)
+    at [object Object].<anonymous> (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2056:12)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Operamini&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;5.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.00&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Tumblr&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Quake&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;5.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Samsung-store&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Pinterest&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;5.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Cisco Jabber&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;5.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.00&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Facebook&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;BBM&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;PPLive&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.01&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;5.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.00&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;ACS_PROTO_TCP&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;ACS_PROTO_GTP&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;10.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.02&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;Lync&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.03&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;15.000000&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+   <failure type="toEqual" message="Expected &apos;0.03&apos; to equal &apos;Mayank&apos;."><![CDATA[Error: Failed expectation
+    at /Users/mayank.mahajan/tmocare-html/src/TestTMOCare/suite.js:90:32
+    at [object Object].promise.ControlFlow.runInFrame_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:1877:20)
+    at [object Object].promise.Callback_.goog.defineClass.notify (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:2464:25)
+    at [object Object].promise.Promise.notify_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:563:12)
+    at Array.forEach (native)
+    at Object.goog.array.forEach (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/array/array.js:203:43)
+    at [object Object].promise.Promise.notifyAll_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/webdriver/promise.js:552:16)
+    at goog.async.run.processWorkQueue (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/goog/async/run.js:125:21)
+    at runMicrotasksCallback (node.js:337:7)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>

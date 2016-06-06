@@ -1,0 +1,233 @@
+<!-- <button id=Button ng-click="showRecords()">ShowRecords</button> -->
+
+
+<div class="container">
+	<div class = "row vdivide">
+		<div class='col-sm-12 text-center'>
+			<h2>Hardware Inventory</h2>
+			<hr>		
+		</div>	
+	</div>
+</div>
+
+
+<div class="container">
+  <div class="row vdivide">
+    <div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Serial Number</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<p>Manufacturer</p>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Hardware Type</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<p>Management IP</p>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Profile Name</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<p>RAM</p>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Hard Disk</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<p>Primary Owner</p>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Secondary Owner</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<p>Tertiary Owner</p>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<p>Project ID</p>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<button id="search" ng-click = "getQueryParameters('serial_number',serial_number,'manufacturer',manufacturer,'hardware_type',hardware_type,'management_ip',management_ip,'profile_name',profile_name,'ram',ram,'hard_disk',hard_disk,'primary_owner',primary_owner,'secondary_owner',secondary_owner,'tertiary_owner',tertiary_owner,'project_name',project_name)">Search</button>
+    	</div>
+	</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row vdivide">
+    <div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center" ng-model="serialnumberField">
+    	<input type='text' ng-model ="serial_number" ng-enter="search('serial_number',serial_number)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="manufacturer" ng-enter="search('manufacturer',manufacturer)"/>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="hardware_type" ng-enter="search('hardware_type',hardware_type)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="management_ip" ng-enter="search('management_ip',management_ip)"/>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="profile_name" ng-enter="search('profile_name',profile_name)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="ram" ng-enter="search('ram',ram)"/>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="hard_disk" ng-enter="search('hard_disk',hard_disk)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="primary_owner" ng-enter="search('primary_owner',primary_owner)"/>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="secondary_owner" ng-enter="search('secondary_owner',secondary_owner)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="tertiary_owner" ng-enter="search('tertiary_owner',tertiary_owner)"/>
+    	</div>
+	</div>
+	<div class="col-sm-2 text-center">
+    	<div class="col-sm-6 text-center">
+    	<input type='text' ng-model ="project_name" ng-enter="search('project_name',project_name)"/>
+    	</div>
+    	<div class="col-sm-6 text-center">
+    	</div>
+	</div>
+  </div>
+</div>
+
+<hr>
+
+<!--  Total Columns  -->
+
+<div class="container" ng-repeat = "row in processedHardwareDetails" >
+  <div class="row vdivide">
+    <div class="col-xs-2 text-center">
+    	<input class="col-xs-6 text-center" type="text" style="font-size:9px" ng-model="row['serial_number']">
+    	<input class="col-xs-6 text-center" type='text' style="font-size:9px" ng-model ="row['management_ip']" />
+	</div>
+	<div class="col-xs-2 text-center">
+    	<div class="col-xs-3 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['ram']" />
+    	</div>
+    	<div class="col-xs-3 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['manufacturer']" />
+    	</div>
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['hard_disk']" />
+    	</div>
+	</div>
+	<div class="col-xs-1 text-center">
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['hardware_type']" />
+    	</div>
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['profile_name']" />
+    	</div>
+	</div>
+	<div class="col-xs-2 text-center">
+    	<div class="col-xs-4 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['primary_owner']" />
+    	</div>
+    	<div class="col-xs-4 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['secondary_owner']" />
+    	</div>
+    	<div class="col-xs-4 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['tertiary_owner']" />
+    	</div>
+	</div>
+	<div class="col-xs-2 text-center">
+    	<div class="col-xs-3 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['project_name']" />
+    	</div>
+    	<div class="col-xs-3 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['setup_name']" />
+    	</div>
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['base_os_ip']" />
+    	</div>
+	</div>
+	<div class="col-xs-1 text-center">
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['base_os_username']" />
+    	</div>
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['base_os_password']" />
+    	</div>
+	</div>
+	<div class="col-xs-1 text-center">
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['vm']" />
+    	</div>
+    	<div class="col-xs-6 text-center">
+    	<input type='text' style="font-size:9px" ng-model ="row['comments']" />
+    	</div>
+	</div>
+	<div class="col-xs-1 text-center">
+    	
+    	<!-- <button ng-click = "editRow(row)" >Edit</button> -->
+    	<!-- <button ng-click = "saveRow(row)" >Save</button>
+    	<button ng-click = "deleteRow(row)" >Delete</button> -->
+    	
+	</div>
+  </div>
+</div>
+
+<hr>
+
+
+
+
+<div class="container" ng-repeat = "row in processedSetupDetails" >
+  <div class="row vdivide">
+    <div class="col-sm-2 text-center">
+    	<input type="text" ng-model="row['setup_ip']">
+	</div>
+    <div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['role']">
+	</div>
+	<div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['cores']">
+	</div>
+	<div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['ram']">
+	</div>
+	<div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['storage_size']">
+	</div>
+	<div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['storage_ip']">
+	</div>
+	<div class="col-sm-1 text-center">
+    	<input type="text" ng-model="row['storage_initiator_name']">
+	</div>
+	<div class="col-sm-2 text-center">
+    	<input type="text" ng-model="row['storage_target_ip']">
+	</div>
+	<div class="col-sm-2 text-center">
+    	<button ng-click = "editRow(row)" >Edit</button>
+    	<button ng-click = "saveRow(row)" >Save</button>
+    	<button ng-click = "deleteRow(row)" >Delete</button>
+	</div>
+  </div>
+</div>
