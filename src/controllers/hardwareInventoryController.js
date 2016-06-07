@@ -9,6 +9,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	
 	$scope.saveRow = function(row){
 //		Save Request to Python
+//		qp = 'api=insert&';
 		qp = 'api=update&';
 		keys = Object.keys(row);
 //		keys = angular.fromJson(angular.toJson(k1));
@@ -22,6 +23,12 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 		}
 		
 		$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+		
+		if (!window.alert('Success'))
+		{
+			$scope.getSearchQueryParameters();
+		}
+		
 	}
 	
 	$scope.deleteRow = function(row){
@@ -39,6 +46,10 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 		}
 		
 		$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+		if (!window.alert('Success'))
+		{
+			$scope.getSearchQueryParameters();
+		}
 	}
 	
 	
@@ -47,7 +58,6 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	$scope.getSearchQueryParameters = function (){
 		qp = 'api=select&';
 		for (var i = 0; i < arguments.length; i=i+2) {
-//		    qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
 			if (arguments[i+1] == undefined)
 				{
 				arguments[i+1] = ''
@@ -55,11 +65,8 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 				
 			qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
 		}
-			
-			
-//		return qp;
-	
 		$scope.httpRequest($scope.fetchRecordsURL.concat(qp));
+		
 	}
 	
 	
@@ -75,6 +82,9 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 			parseData = $scope.parseHardwareDetails(rawData);
 			return parseData;
 		}).then(function(rawData){
+			
+//			alert('Please Search Again');
+//			
 		});
 //		records =  TestService.getRecords().then(function(response){
 //			$scope.GRIDresponsehandler(rawData);

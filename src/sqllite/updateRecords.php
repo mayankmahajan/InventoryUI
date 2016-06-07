@@ -31,10 +31,10 @@
     	$tertiary_owner = "tertiary_owner=\'".$_GET["tertiary_owner"]."\'";
     }
     if($_GET["project_name"] != 'undefined'){
-    	$project_name = "project_name=\'".$_GET["project_name"]."\'";
+    	$project_name = "project_id=\'".$_GET["project_name"]."\'";
     }
     if($_GET["hardware_type"] != 'undefined'){
-    	$hardware_type = "hardware_type=\'".$_GET["hardware_type"]."\'";
+    	$hardware_type = "product_name=\'".$_GET["hardware_type"]."\'";
     }
     if($_GET["setup_name"] != 'undefined'){
     	$setup_name = "setup_name=\'".$_GET["setup_name"]."\'";
@@ -54,7 +54,15 @@
     if($_GET["comments"] != 'undefined'){
     	$comments = "comments=\'".$_GET["comments"]."\'";
     }
+    if($_GET["cores"] != 'undefined'){
+        $cores = "cores=\'".$_GET["cores"]."\'";
+    }
+    if($_GET["created_by"] != 'undefined'){
+        $created_by = "created_by=\'amit.saxena\'";
+    }
+
+
     
-    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name $hardware_type $setup_name $base_os_ip $base_os_username $vm $comments");
+    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name $hardware_type $setup_name $base_os_ip $base_os_username $base_os_password $vm $comments $cores $created_by");
     echo $result;    
   ?>

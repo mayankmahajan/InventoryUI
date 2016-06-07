@@ -62,7 +62,7 @@ def create_insert_arguments(args, columns):
         for arg in args:
             if column in arg:
                 arg_value = arg.split('=')[1]
-                if arg == "project_id":
+                if column == "project_id":
                     arg_value = obj.get_project_id(arg_value)
                     if arg_value == "''":
                         sys.exit("Wrong project name.")
@@ -112,6 +112,7 @@ class HardwareInventory(CommonVariables):
 
     def add_new_hardware(self, args):
         columns = self.sqlite_object.get_column_names(self.table_hardware)
+        #print columns
         values = create_insert_arguments(args, columns)
         values += ",'y','n','%s'" % self.current_time
         if len(columns.split(',')) == len(values.split(',')):
@@ -186,8 +187,10 @@ if __name__ == "__main__":
         if sys.argv[1] == "api='select'":
             print json.dumps(hwi.get_hardware_details(args))
         elif sys.argv[1] == "api='update'":
+            #print json.dumps((args))
             print json.dumps(hwi.update_hardware_details(args))
         elif sys.argv[1] == "api='insert'":
+            #print args
             print json.dumps(hwi.add_new_hardware(args))
         elif sys.argv[1] == "api='delete'":
             print json.dumps(hwi.delete_hardware(args[0:1]))

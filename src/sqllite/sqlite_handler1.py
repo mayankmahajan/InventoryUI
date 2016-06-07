@@ -16,10 +16,9 @@ class CreateSQLiteConnection():
     def get_column_names(self, table_name):
         # Get column names of any given table
         rows = self.cur.execute("PRAGMA table_info(%s)" % table_name).fetchall()
-        columns = []
+        columns = set()
         for row in rows:
-            columns.append(row[1])
-        columns = ",".join(columns)
+            columns.add(row[1])
         return columns
 
     def get_column_modifiers(self, columns):
