@@ -36,7 +36,14 @@
     if($_GET["hardware_type"] != 'undefined'){
     	$hardware_type = "hardware_type=\'".$_GET["hardware_type"]."\'";
     }
+    if($_GET["setup_name"] != 'undefined'){
+    	$setup_name = "setup_name=\'".$_GET["setup_name"]."\'";
+    }
+    if($_GET["cores"] != 'undefined'){
+    	$cores = "cores=\'".$_GET["cores"]."\'";
+    }
+
     
-    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name");
+    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name $cores $setup_name");
     echo $result;    
   ?>

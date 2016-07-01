@@ -45,8 +45,11 @@
     	<div class="col-sm-6 text-center">
     	<p>Profile Name</p>
     	</div>
-    	<div class="col-sm-6 text-center">
+    	<div class="col-sm-3 text-center">
     	<p>RAM</p>
+    	</div>
+    	<div class="col-sm-3 text-center">
+    	<p>Cores</p>
     	</div>
 	</div>
 	<div class="col-sm-2 text-center">
@@ -54,14 +57,17 @@
     	<p>Hard Disk</p>
     	</div>
     	<div class="col-sm-6 text-center">
-    	<p>Primary Owner</p>
+    	<p>Setup Name</p>
     	</div>
 	</div>
 	<div class="col-sm-2 text-center">
-    	<div class="col-sm-6 text-center">
+		<div class="col-sm-4 text-center">
+    	<p>Primary Owner</p>
+    	</div>
+    	<div class="col-sm-4 text-center">
     	<p>Secondary Owner</p>
     	</div>
-    	<div class="col-sm-6 text-center">
+    	<div class="col-sm-4 text-center">
     	<p>Tertiary Owner</p>
     	</div>
 	</div>
@@ -70,7 +76,7 @@
     	<p>Project ID</p>
     	</div>
     	<div class="col-sm-6 text-center">
-    	<button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number,'manufacturer',manufacturer,'hardware_type',hardware_type,'management_ip',management_ip,'profile_name',profile_name,'ram',ram,'hard_disk',hard_disk,'primary_owner',primary_owner,'secondary_owner',secondary_owner,'tertiary_owner',tertiary_owner,'project_name',project_name)">Search</button>
+    	<button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number,'manufacturer',manufacturer,'hardware_type',hardware_type,'management_ip',management_ip,'profile_name',profile_name,'ram',ram,'hard_disk',hard_disk,'primary_owner',primary_owner,'secondary_owner',secondary_owner,'tertiary_owner',tertiary_owner,'project_name',project_name,'setup_name',setup_name,'cores',cores)">Search</button>
     	</div>
 	</div>
   </div>
@@ -98,8 +104,11 @@
     	<div class="col-sm-6 text-center">
     	<input type='text' ng-model ="profile_name" ng-enter="search('profile_name',profile_name)"/>
     	</div>
-    	<div class="col-sm-6 text-center">
+    	<div class="col-sm-3 text-center">
     	<input type='text' ng-model ="ram" ng-enter="search('ram',ram)"/>
+    	</div>
+    	<div class="col-sm-3 text-center">
+    	<input type='text' ng-model ="cores" ng-enter="search('cores',cores)"/>
     	</div>
 	</div>
 	<div class="col-sm-2 text-center">
@@ -107,14 +116,17 @@
     	<input type='text' ng-model ="hard_disk" ng-enter="search('hard_disk',hard_disk)"/>
     	</div>
     	<div class="col-sm-6 text-center">
-    	<input type='text' ng-model ="primary_owner" ng-enter="search('primary_owner',primary_owner)"/>
+    	<input type='text' ng-model ="setup_name" ng-enter="search('setup_name',setup_name)"/>
     	</div>
 	</div>
 	<div class="col-sm-2 text-center">
-    	<div class="col-sm-6 text-center">
+		<div class="col-sm-4 text-center">
+    	<input type='text' ng-model ="primary_owner" ng-enter="search('primary_owner',primary_owner)"/>
+    	</div>
+    	<div class="col-sm-4 text-center">
     	<input type='text' ng-model ="secondary_owner" ng-enter="search('secondary_owner',secondary_owner)"/>
     	</div>
-    	<div class="col-sm-6 text-center">
+    	<div class="col-sm-4 text-center">
     	<input type='text' ng-model ="tertiary_owner" ng-enter="search('tertiary_owner',tertiary_owner)"/>
     	</div>
 	</div>

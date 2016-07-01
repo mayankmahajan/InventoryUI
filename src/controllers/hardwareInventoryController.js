@@ -10,7 +10,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	$scope.saveRow = function(row){
 //		Save Request to Python
 //		qp = 'api=insert&';
-		qp = 'api=update&';
+		qp = 'api=update_hardware&';
 		keys = Object.keys(row);
 
 		for (var i=0; i<keys.length; i++){
@@ -27,7 +27,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	
 	$scope.deleteRow = function(row){
 //		Save Request to Python
-		qp = 'api=delete&';
+		qp = 'api=delete_hardware&';
 		keys = Object.keys(row);
 		
 		for (var i=0; i<keys.length; i++){
@@ -43,7 +43,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	}
 	
 	$scope.getSearchQueryParameters = function (){
-		qp = 'api=select&';
+		qp = 'api=select_hardware&';
 		for (var i = 0; i < arguments.length; i=i+2) {
 			if (arguments[i+1] == undefined)
 				{
@@ -64,7 +64,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 				}
 				else{
 					if(!alert(response.data)){
-						window.location = 'http://192.168.162.9/inventory_management/home.html';
+//						window.location = 'http://192.168.162.9/inventory_management/home.html';
 					}
 					
 				}
