@@ -10,38 +10,39 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container" >
   <div class="row vdivide">
     <div class="col-sm-5 text-right">
-    	<h4>Hardware Details</h4>
-		Serial: <input type="text" ng-model="serialnumber" ng-enter="showRecords()"><br/>
-		Cores: <input type="text" ng-model="processedHardwareDetails['cores']" ng-disabled="serialnumber"><br/>
-		RAM: <input type="text" ng-model="processedHardwareDetails['ram']" ng-disabled="serialnumber" ><br/>
-		Hard Disk: <input type="text"  ng-model="processedHardwareDetails['storage_size']" ng-disabled="serialnumber"><br/>
+    	<h4>Hardware Details - QCI1618A2O2</h4>
+		Serial: <input type="text" ng-model ="serial_number" ng-enter="getSearchQueryParameters('serial_number',serial_number)"><br/>
+		Cores: <input type="text" ng-model="processedHardwareDetails[0]['cores']" ng-disabled="serial_number"><br/>
+		RAM: <input type="text" ng-model="processedHardwareDetails[0]['ram']" ng-disabled="serial_number" ><br/>
+		Hard Disk: <input type="text"  ng-model="processedHardwareDetails[0]['hard_disk']" ng-disabled="serial_number"><br/>
 	</div>
     <div class="col-sm-4 text-right">
-    	<h4>...</h4>
-		Manufacturer: <input type="text" ng-model="manufacturer" ng-disabled="serialnumber"><br/>
-		Hardware Type: <input type="text" ng-model="hardwaretype" ng-disabled="serialnumber"><br/>
-		Management IP: <input type="text" ng-model="processedHardwareDetails[0]['Bare_Metal_IP']" ng-disabled="serialnumber" ><br/>
-		Profile Name (CISCO): <input type="text" ng-model="profilename" ng-disabled="serialnumber"><br/>
+    	Search: <button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number)" >Search...</button>
+		Manufacturer: <input type="text" ng-model="processedHardwareDetails[0]['manufacturer']" ng-disabled="serial_number"><br/>
+		Hardware Type: <input type="text" ng-model="processedHardwareDetails[0]['hardware_type']" ng-disabled="serial_number"><br/>
+		Management IP: <input type="text" ng-model="processedHardwareDetails[0]['management_ip']" ng-disabled="serial_number" ><br/>
+		Profile Name (CISCO): <input type="text" ng-model="processedHardwareDetails[0]['profile_name']" ng-disabled="serial_number"><br/>
 	</div>
   </div>
 </div>
 <hr>
-<div class="container">
+<div class="container" ng-init = "getProjects()" >
   <div class="row vdivide">
     <div class="col-sm-5 text-right">
     	<h4>Base Machine Details</h4>
-		Project: <input type="text" ng-model="project"><br/>
-		Setup Name: <input type="text" ng-model="setupname"><br/>
-		VM Host: <input type="text" ng-model="vmhost"><br/>
+		<!-- Project: <select style="width: 200px"><option ng-repeat="project in processedProjectDetails" value= "{{project.project_name}}" >{{project.project_name}}</option></select> -->
+		<!-- Project: <input type="text" ng-model="processedHardwareDetails[0]['project_name']"><br/> -->
+		Setup Name: <input type="text" ng-model="processedHardwareDetails[0]['setup_name']"><br/>
+		VM Host: <input type="text" ng-model="processedHardwareDetails[0]['vm']" ng-disabled="serial_number"><br/>
 	</div>
     <div class="col-sm-4 text-right">
     	<h4><button id=edit ng-click="showRecords()">Edit/Save</button></h4>
-    	Base OS IP: <input type="text" ng-model="baseosip"><br/>
-		Base OS Username: <input type="text" ng-model="baseosusernmae"><br/>
-		Base OS Password: <input type="text" ng-model="baseospassword"><br/>
+    	Base OS IP: <input type="text" ng-model="processedHardwareDetails[0]['base_os_ip']" ng-disabled="serial_number"><br/>
+		Base OS Username: <input type="text" ng-model="processedHardwareDetails[0]['base_os_username']" ng-disabled="serial_number"><br/>
+		Base OS Password: <input type="text" ng-model="processedHardwareDetails[0]['base_os_password']" ng-disabled="serial_number"><br/>
     </div>
   </div>
 </div>
@@ -90,10 +91,10 @@
 </div>
 
 
-<div class="container" ng-repeat = "row in processedSetupDetails" >
+<div class="container" ng-repeat = "row in processedHardwareDetails" >
   <div class="row vdivide">
     <div class="col-sm-2 text-center">
-    	<input type="text" ng-model="row['setup_ip']">
+    	<input type="text" ng-model="row['management_ip']">
 	</div>
     <div class="col-sm-1 text-center">
     	<input type="text" ng-model="row['role']">
@@ -105,10 +106,10 @@
     	<input type="text" ng-model="row['ram']">
 	</div>
 	<div class="col-sm-1 text-center">
-    	<input type="text" ng-model="row['storage_size']">
+    	<input type="text" ng-model="row['hard_disk']">
 	</div>
 	<div class="col-sm-1 text-center">
-    	<input type="text" ng-model="row['storage_ip']">
+    	<input type="text" ng-model="row['base_os_ip']">
 	</div>
 	<div class="col-sm-1 text-center">
     	<input type="text" ng-model="row['storage_initiator_name']">
@@ -124,28 +125,3 @@
   </div>
 </div>
 
-
-<div class='chartbody' id = 'chartBodyID'>
-	<script src="Scripts/d3.min.js"></script> 
-      <!--tooltip in d3-->
-    <script src="Scripts/d3.tip.v0.6.3.js"></script>
-	<script src="components/SlickGrid/lib/firebugx.js"></script>
-	<script src="components/SlickGrid/lib/jquery-1.7.min.js"></script>
-    <script src="components/SlickGrid/lib/jquery-ui-1.8.16.custom.min.js"></script>
-    <script src="components/SlickGrid/lib/jquery.event.drag-2.2.js"></script>
-    <!--  // <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script> -->
-    <script src="components/SlickGrid/lib/jquery.event.drop-2.2.js"></script>
-    <script src="components/SlickGrid/slick.core.js"></script>
-    <script src="components/SlickGrid/plugins/slick.cellrangeselector.js"></script>
-    <script src="components/SlickGrid/plugins/slick.cellselectionmodel.js"></script>
-    <script src="components/SlickGrid/plugins/slick.rowselectionmodel.js"></script>
-    <script src="components/SlickGrid/plugins/slick.autotooltips.js"></script>
-    <script src="components/SlickGrid/slick.formatters.js"></script>
-    <script src="components/SlickGrid/slick.editors.js"></script>
-    <script src="components/SlickGrid/slick.grid.js"></script>
-    <script src="components/SlickGrid/slick.compositeeditor.js"></script>
-
-	<hr>
-	<hr>
-	<div id="myGrid" />
-</div>

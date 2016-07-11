@@ -1,145 +1,153 @@
 app.controller('addSetupPageController',['$scope','$http','TestService', function($scope,$http,TestService)
 {
 	
-	$scope.fetchRecordsURL = 'sqllite/createRecords.php'
-	
-	$scope.processedData = []
-	$scope.showRecords = function()
-	{
-		$http.get($scope.fetchRecordsURL).then(function(response){
-			rawData = response;
-			return rawData;
-		}).then(function(rawData){
-//			parseData = $scope.parseHardwareDetails(rawData);
-			parseData = $scope.parseSetupDetails(rawData);
-			return parseData;
-		}).then(function(rawData){
-		});
-//		records =  TestService.getRecords().then(function(response){
-//			$scope.GRIDresponsehandler(rawData);
-//		});
+	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
+		$scope.updateRecordsURL = 'sqllite/updateRecords.php?'
 		
-	}
-	
-	$scope.parseSetupDetails = function(rawData)
-	{
-		$scope.processedSetupDetails = rawData.data;
-		return $scope.processedSetupDetails
-	}
-	
-	$scope.parseHardwareDetails = function(rawData)
-	{
-//		this.processedData = [];
-//		
-//		this.processedData = [rawData.data[0]];
-		$scope.processedHardwareDetails = rawData.data[0];
-//		x = {Bare_Metal_IP: "192.168.151.90",
-//			Project: "STEM1",
-//			Role: "NN",
-//			Setup_IP: "192.168.151.9",
-//			Setup_Name: "Functional",
-//			Storage_IP: "xx.11.xx.34",
-//			Storage_Size: "109 G",
-//			Storage_initiator_name: "intenale",
-//			Storage_target_ip: "1.13.1.4",
-//			VIP: "xxx.xxx.xxx.vip",
-//			VM: "Y"}
-//		$scope.processedData.push(x);
-		return $scope.processedHardwareDetails;
+		$scope.processedData = []
 		
-	}
-	
-	$scope.addNewRow = function(){
 		
-		x = {Bare_Metal_IP: "192.168.151.90",
-				Project: "STEM1",
-				Role: "NN",
-				Setup_IP: "192.168.151.9",
-				Setup_Name: "Functional",
-				Storage_IP: "xx.11.xx.34",
-				Storage_Size: "109 G",
-				Storage_initiator_name: "intenale",
-				Storage_target_ip: "1.13.1.4",
-				VIP: "xxx.xxx.xxx.vip",
-				VM: "Y"}
-		$scope.processedData.push(x);
-		return $scope.processedData;
+		$scope.saveRow = function(row){
+//			Save Request to Python
+//			qp = 'api=insert&';
+			qp = 'api=update_hardware&';
+			keys = Object.keys(row);
+
+			for (var i=0; i<keys.length; i++){
+				if (keys[i] == '$$hashkey'){
+					continue;
+				}
+				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
+			}
+			
+			$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+			
+//			$scope.getSearchQueryParameters();
+		}
 		
-	}
-	
-	$scope.editRow = function(row){
-//		UI side handling only
-		return row
-	}
-	
-	$scope.saveRow = function(row){
-//		Save Request to Python
-		return row
-	}
-	
-	$scope.deleteRow = function(row){
-//		Delete request to Python
-		return $scope.processedData.pop()
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// Drawing Table
-	$scope.gridID='myGrid';
-	$scope.viewID='chartBodyID';
-	
-	var windowWidth = document.body.offsetWidth -50 ;
-	$scope.columns = function(_wd)
-	{
-	    var eachcolWd= _wd/3; 
-//	    var columns = 
-//	     [
-//	      {id: "a", name: "a", field: "a", width: eachcolWd,sortable:true},
-//	      {id: "b", name: "b", field: "b", width: eachcolWd,sortable:true},
-//	      {id: "c", name: "c", field: "c", width: eachcolWd,sortable:true}
-//	     ];
-	    var columns = 
-	        [
-	         {id: Object.keys(this.processedData[0])[0], name: Object.keys(this.processedData[0])[0], field: Object.keys(this.processedData[0])[0], width: windowWidth/4,sortable:true},
-	         {id: Object.keys(this.processedData[0])[1], name: Object.keys(this.processedData[0])[1], field: Object.keys(this.processedData[0])[1], width: windowWidth/4,sortable:true},
-	         {id: Object.keys(this.processedData[0])[2], name: Object.keys(this.processedData[0])[2], field: Object.keys(this.processedData[0])[2], width: windowWidth/4,sortable:true},
-	         {id: Object.keys(this.processedData[0])[3], name: Object.keys(this.processedData[0])[3], field: Object.keys(this.processedData[0])[3], width: windowWidth/4,sortable:true},
-	         {id: Object.keys(this.processedData[0])[3], name: Object.keys(this.processedData[0])[4], field: Object.keys(this.processedData[0])[4], width: windowWidth/4,sortable:true},
-	         {id: Object.keys(this.processedData[0])[3], name: Object.keys(this.processedData[0])[5], field: Object.keys(this.processedData[0])[5], width: windowWidth/4,sortable:true}
-	         
-	         
-	         // {id: "sessionCount", name: "sessionCount", field: "sessionCount", width: 200,sortable:true}
-	        ];
-	    return columns;
-	};
-	
-	$scope.loadGrid = function (dp,wd,ht,divId)
-    {
-		var scope = angular.element($("#"+divId)).scope();
-		var columns = $scope.columns(wd)
-		createGridView(scope.gridID,dp,wd,ht,columns,scope.getGridOption);
-    };
-  
-    
-    $scope.GRIDresponsehandler = function(rawData)
-    {
-    	$scope.griddp = rawData;
-    	$scope.loadGrid($scope.griddp,windowWidth,150,$scope.viewID);
-    }
-  
-  
+		$scope.deleteRow = function(row){
+//			Save Request to Python
+			qp = 'api=delete_hardware&';
+			keys = Object.keys(row);
+			
+			for (var i=0; i<keys.length; i++){
+				if (keys[i] == '$$hashkey'){
+					continue;
+				}
+				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
+			}
+			
+			$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+		
+//			$scope.getSearchQueryParameters();
+		}
+		
+		$scope.getSearchQueryParameters = function (){
+			qp = 'api=select_hardware&';
+			for (var i = 0; i < arguments.length; i=i+2) {
+				if (arguments[i+1] == undefined)
+					{
+					arguments[i+1] = ''
+					}
+					
+				qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
+			}
+			$scope.httpRequest($scope.fetchRecordsURL.concat(qp));
+		}
+		
+		$scope.getProjects = function (){
+			qp = 'api=projects&';
+			for (var i = 0; i < arguments.length; i=i+2) {
+				if (arguments[i+1] == undefined)
+					{
+					arguments[i+1] = ''
+					}
+					
+				qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
+			}
+			$scope.fetchProjects($scope.fetchRecordsURL.concat(qp));
+		}
+		$scope.fetchProjects = function(qp)
+		{
+			$http.get(qp).then(function(response){
+				if (typeof(response.data) == 'string'){
+					if (response.data == " "){
+						alert("Error");
+					}
+					else{
+						if(!alert(response.data)){
+//							window.location = 'http://192.168.162.9/inventory_management/home.html';
+						}
+						
+					}
+				}
+					
+				rawData = response;
+				return rawData;
+			}).then(function(rawData){
+				parseData = $scope.parseProjectDetails(rawData);
+				return parseData;
+			}).then(function(rawData){
+				
+			});
+		}
+		
+		
+		$scope.httpRequest = function(qp)
+		{
+			$http.get(qp).then(function(response){
+				if (typeof(response.data) == 'string'){
+					if (response.data == " "){
+						alert("Error");
+					}
+					else{
+						if(!alert(response.data)){
+//							window.location = 'http://192.168.162.9/inventory_management/home.html';
+						}
+						
+					}
+				}
+					
+				rawData = response;
+				return rawData;
+			}).then(function(rawData){
+				parseData = $scope.parseHardwareDetails(rawData);
+				return parseData;
+			}).then(function(rawData){
+				
+			});
+		}
+		
+		$scope.parseHardwareDetails = function(rawData)
+		{
+			$scope.processedHardwareDetails = rawData.data;
+			
+			// Creating blank row
+			object = {};
+			keys = Object.keys($scope.processedHardwareDetails);
+			for (var i=0; i<keys;i++){
+				object[keys[i]] =''
+			}
+			$scope.processedHardwareDetails.push(object);
+			
+			return $scope.processedHardwareDetails;
+		}
+		$scope.parseProjectDetails = function(rawData)
+		{
+			$scope.processedProjectDetails = rawData.data;
+//			
+			
+//			// Creating blank row
+//			object = {};
+//			keys = Object.keys($scope.processedHardwareDetails);
+//			for (var i=0; i<keys;i++){
+//				object[keys[i]] =''
+//			}
+//			$scope.processedHardwareDetails.push(object);
+			
+			return $scope.processedProjectDetails;
+		}
+		
   
   
 }
