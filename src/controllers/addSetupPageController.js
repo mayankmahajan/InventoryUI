@@ -118,6 +118,22 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			});
 		}
 		
+		$scope.disable = true;
+		
+		$scope.onProjectChange = function(project,hardwareDetail)
+		{
+			if (project['project_name'] == hardwareDetail[0]['project_name'])
+				{
+				$scope.disable = false;
+				return true;
+				}
+			else
+				{
+				$scope.disable = true;
+				return false;
+				}
+		}
+		
 		$scope.parseHardwareDetails = function(rawData)
 		{
 			$scope.processedHardwareDetails = rawData.data;

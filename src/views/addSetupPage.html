@@ -33,16 +33,21 @@
   <div class="row vdivide">
     <div class="col-sm-5 text-right">
     	<h4>Base Machine Details</h4>
-		<!-- Project: <select style="width: 200px"><option ng-repeat="project in processedProjectDetails" value= "{{project.project_name}}" >{{project.project_name}}</option></select> -->
-		<!-- Project: <input type="text" ng-model="processedHardwareDetails[0]['project_name']"><br/> -->
+    	<!-- ng-change="vm.onTypeChange(vm.selectedtype)" -->
+    	<select class='dropdown-list-style'
+				style="height: 25px; vertical-align: middle"
+				ng-model="project.project_name"
+				ng-change="onProjectChange(project.project_name,processedHardwareDetails)"
+				ng-options="project as project.project_name for project in processedProjectDetails track by project.project_name">
+		</select>
 		Setup Name: <input type="text" ng-model="processedHardwareDetails[0]['setup_name']"><br/>
 		VM Host: <input type="text" ng-model="processedHardwareDetails[0]['vm']" ng-disabled="serial_number"><br/>
 	</div>
     <div class="col-sm-4 text-right">
     	<h4><button id=edit ng-click="showRecords()">Edit/Save</button></h4>
-    	Base OS IP: <input type="text" ng-model="processedHardwareDetails[0]['base_os_ip']" ng-disabled="serial_number"><br/>
-		Base OS Username: <input type="text" ng-model="processedHardwareDetails[0]['base_os_username']" ng-disabled="serial_number"><br/>
-		Base OS Password: <input type="text" ng-model="processedHardwareDetails[0]['base_os_password']" ng-disabled="serial_number"><br/>
+    	Base OS IP: <input type="text" ng-model="processedHardwareDetails[0]['base_os_ip']" ng-disabled="disable"><br/>
+		Base OS Username: <input type="text" ng-model="processedHardwareDetails[0]['base_os_username']" ng-disabled="disable"><br/>
+		Base OS Password: <input type="text" ng-model="processedHardwareDetails[0]['base_os_password']" ng-disabled="disable"><br/>
     </div>
   </div>
 </div>
@@ -91,7 +96,7 @@
 </div>
 
 
-<div class="container" ng-repeat = "row in processedHardwareDetails" >
+<div class="container"  ng-repeat = "row in processedHardwareDetails" >
   <div class="row vdivide">
     <div class="col-sm-2 text-center">
     	<input type="text" ng-model="row['management_ip']">
