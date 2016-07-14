@@ -148,7 +148,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 					
 				qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
 			}
-			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+			$scope.fetchSetupDetails($scope.fetchSetupRecordsURL.concat(qp));
 		}
 		$scope.fetchSetupDetails = function(qp)
 		{
@@ -236,7 +236,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
 			}
 			
-			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+			$scope.fetchSetupDetails($scope.updateSetupRecordsURL.concat(qp));
 			
 //			$scope.getSearchQueryParameters();
 		}
@@ -253,7 +253,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
 			}
 			
-			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+			$scope.fetchSetupDetails($scope.updateSetupRecordsURL.concat(qp));
 		
 //			$scope.getSearchQueryParameters();
 		}
