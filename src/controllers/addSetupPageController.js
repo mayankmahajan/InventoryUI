@@ -1,8 +1,10 @@
 app.controller('addSetupPageController',['$scope','$http','TestService', function($scope,$http,TestService)
 {
 	
-	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
+		$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
 		$scope.updateRecordsURL = 'sqllite/updateRecords.php?'
+		$scope.fetchSetupRecordsURL = 'sqllite/searchSetupRecords.php?'
+		$scope.updateSetupRecordsURL = 'sqllite/updateSetupRecords.php?'
 		
 		$scope.processedData = []
 		
@@ -130,8 +132,47 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			else
 				{
 				$scope.disable = true;
+				alert("Project not matching");
 				return false;
 				}
+		}
+		$scope.vm = '';
+		$scope.getSetupDetails = function (vm){
+			$scope.vm = vm;
+			qp = 'api=select_setup&';
+			for (var i = 0; i < arguments.length; i=i+2) {
+				if (arguments[i+1] == undefined)
+					{
+					arguments[i+1] = ''
+					}
+					
+				qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
+			}
+			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+		}
+		$scope.fetchSetupDetails = function(qp)
+		{
+			$http.get(qp).then(function(response){
+				if (typeof(response.data) == 'string'){
+					if (response.data == " "){
+						alert("Error");
+					}
+					else{
+						if(!alert(response.data)){
+//							window.location = 'http://192.168.162.9/inventory_management/home.html';
+						}
+						
+					}
+				}
+					
+				rawData = response;
+				return rawData;
+			}).then(function(rawData){
+				parseData = $scope.parseSetupDetails(rawData);
+				return parseData;
+			}).then(function(rawData){
+				
+			});
 		}
 		
 		$scope.parseHardwareDetails = function(rawData)
@@ -162,6 +203,59 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 //			$scope.processedHardwareDetails.push(object);
 			
 			return $scope.processedProjectDetails;
+		}
+		$scope.parseSetupDetails = function(rawData)
+		{
+			if ($scope.vm == Y)
+			{
+			$scope.processedProjectDetails = rawData.data;
+			}
+//			
+			
+			// Creating blank row
+			object = {};
+			keys = Object.keys($scope.processedSetupDetails);
+			for (var i=0; i<keys;i++){
+				object[keys[i]] =''
+			}
+			$scope.processedHardwareDetails.push(object);
+			
+			return $scope.processedProjectDetails;
+		}
+		
+		$scope.saveSetupRow = function(row){
+//			Save Request to Python
+//			qp = 'api=insert&';
+			qp = 'api=update_setup&';
+			keys = Object.keys(row);
+
+			for (var i=0; i<keys.length; i++){
+				if (keys[i] == '$$hashkey'){
+					continue;
+				}
+				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
+			}
+			
+			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+			
+//			$scope.getSearchQueryParameters();
+		}
+		
+		$scope.deleteSetupRow = function(row){
+//			Save Request to Python
+			qp = 'api=delete_setup&';
+			keys = Object.keys(row);
+			
+			for (var i=0; i<keys.length; i++){
+				if (keys[i] == '$$hashkey'){
+					continue;
+				}
+				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
+			}
+			
+			$scope.fetchSetupDetails($scope.fetchRecordsURL.concat(qp));
+		
+//			$scope.getSearchQueryParameters();
 		}
 		
   
