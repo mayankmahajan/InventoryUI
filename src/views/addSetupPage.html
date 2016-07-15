@@ -63,37 +63,6 @@
   </div>
 </div>
 
-<!-- <div class="container">
-  <div class="row vdivide">
-    <div class="col-sm-2 text-center">
-    	<h4>IP</h4>
-	</div>
-    <div class="col-sm-1 text-center">
-    	<h4>Role</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>Cores</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>RAM</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>Storage Size</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>Storage IP</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>Storage Interior Name</h4>
-	</div>
-	<div class="col-sm-2 text-center">
-    	<h4>Storage Target IP</h4>
-	</div>
-	<div class="col-sm-1 text-center">
-    	<h4>Actions</h4>
-	</div>
-  </div>
-</div> -->
 
 <div class="container-fluid"  >
   <div class="row vdivide no-gutter">
@@ -132,8 +101,8 @@
 <div class="container-fluid" ng-repeat = "row in processedSetupDetails" >
   <div class="row vdivide no-gutter">
     <div class="col-xs-3  no-gutter text-center">
-    	<input class="col-xs-3 text-center" type="text" style="font-size:9px" ng-model="row['serial_number']">
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['project_name']" />
+    	<input class="col-xs-3 text-center" type="text" style="font-size:9px" ng-model="row['serial_number']" ng-disabled = "false" />
+    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['project_name']" ng-disabled = "false" />
     	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['setup_ip']" />
     	<input class="col-xs-2 text-center" type='text' style="font-size:9px" ng-model ="row['cores']" />
 	</div>
@@ -151,12 +120,12 @@
 	<div class="col-xs-3 text-center no-gutter">
     	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['storage_target_ip']" />
     	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['created_by']" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['vm_id']" />
+    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['vm_id']" ng-disabled = "false" />
 	</div>
 	<div class="col-xs-2 text-center no-gutter">
     	<input class="col-xs-6 text-center" type='text' style="font-size:9px" ng-model ="row['comments']" />
-    	<button class="col-xs-3 text-center" ng-click = "saveRow(row)" >S</button>
-    	<button class="col-xs-3 text-center" ng-click = "deleteRow(row)" >X</button>
+    	<button class="col-xs-3 text-center" ng-click = "saveSetupRow(row)" >S</button>
+    	<button class="col-xs-3 text-center" ng-click = "deleteSetupRow(row)" >X</button>
 	</div>
   </div>
 </div>

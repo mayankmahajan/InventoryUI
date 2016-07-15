@@ -31,22 +31,16 @@
     	$storage_initiator_name = "storage_initiator_name=\'".$_GET["storage_initiator_name"]."\'";
     }
     if($_GET["project_name"] != 'undefined'){
-    	$project_name = "project_id=\'".$_GET["project_name"]."\'";
+    	$project_name = 'project_id="\''.$_GET["project_name"].'\'"';
     }
     if($_GET["storage_target_ip"] != 'undefined'){
     	$storage_target_ip = "storage_target_ip=\'".$_GET["storage_target_ip"]."\'";
-    }
-    if($_GET["creation_time"] != 'undefined'){
-    	$creation_time = "creation_time=\'".$_GET["creation_time"]."\'";
-    }
-    if($_GET["current_version"] != 'undefined'){
-    	$current_version = "current_version=\'".$_GET["current_version"]."\'";
     }
     if($_GET["vm_id"] != 'undefined'){
     	$vm_id = "vm_id=\'".$_GET["vm_id"]."\'";
     }
     if($_GET["comments"] != 'undefined'){
-    	$comments = "comments=\'".$_GET["comments"]."\'";
+    	$comments = 'comments="\''.$_GET["comments"].'\'"';
     }
     if($_GET["cores"] != 'undefined'){
         $cores = "cores=\'".$_GET["cores"]."\'";
@@ -57,6 +51,6 @@
 
 
     
-    $result = exec("python inventory_management.py $api $serial_number $manufacturer $setup_ip $role $vip $ram $hard_disk $storage_size $storage_ip $storage_initiator_name $project_name $storage_target_ip $creation_time $current_version $vm_id $comments $cores $created_by");
+    $result = exec("python inventory_management.py $api $serial_number $setup_ip $role $vip $ram $hard_disk $storage_size $storage_ip $storage_initiator_name $project_name $storage_target_ip  $vm_id $comments $cores $created_by");
     echo $result;    
   ?>

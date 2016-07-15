@@ -16,7 +16,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			keys = Object.keys(row);
 
 			for (var i=0; i<keys.length; i++){
-				if (keys[i] == '$$hashkey'){
+				if (keys[i] == '$$hashkey' || keys[i] == '$$hashKey'){
 					continue;
 				}
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
@@ -33,7 +33,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			keys = Object.keys(row);
 			
 			for (var i=0; i<keys.length; i++){
-				if (keys[i] == '$$hashkey'){
+				if (keys[i] == '$$hashkey' || keys[i] == '$$hashKey'){
 					continue;
 				}
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
@@ -232,7 +232,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			keys = Object.keys(row);
 
 			for (var i=0; i<keys.length; i++){
-				if (keys[i] == '$$hashkey'){
+				if (keys[i] == '$$hashkey' || keys[i] == '$$hashKey'){
 					continue;
 				}
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
@@ -249,7 +249,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 			keys = Object.keys(row);
 			
 			for (var i=0; i<keys.length; i++){
-				if (keys[i] == '$$hashkey'){
+				if (keys[i] == '$$hashkey' || keys[i] == '$$hashKey'){
 					continue;
 				}
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
