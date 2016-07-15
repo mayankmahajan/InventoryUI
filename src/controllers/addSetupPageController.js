@@ -137,8 +137,8 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				}
 		}
 		$scope.vm = '';
-		$scope.getSetupDetails = function (vm){
-			$scope.vm = vm;
+		$scope.getSetupDetails = function (){
+//			$scope.vm = vm;
 			qp = 'api=select_setup&';
 			for (var i = 0; i < arguments.length; i=i+2) {
 				if (arguments[i+1] == undefined)
@@ -178,6 +178,7 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 		$scope.parseHardwareDetails = function(rawData)
 		{
 			$scope.processedHardwareDetails = rawData.data;
+			$scope.vm = rawData.data[0]['vm']
 			
 			// Creating blank row
 			object = {};
@@ -206,21 +207,22 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 		}
 		$scope.parseSetupDetails = function(rawData)
 		{
-			if ($scope.vm == Y)
+			$scope.processedSetupDetails = []
+			if ($scope.vm == "Y")
 			{
-			$scope.processedProjectDetails = rawData.data;
+			$scope.processedSetupDetails = rawData.data;
 			}
 //			
 			
 			// Creating blank row
 			object = {};
-			keys = Object.keys($scope.processedSetupDetails);
+			keys = Object.keys(rawData.data);
 			for (var i=0; i<keys;i++){
 				object[keys[i]] =''
 			}
-			$scope.processedHardwareDetails.push(object);
+			$scope.processedSetupDetails.push(object);
 			
-			return $scope.processedProjectDetails;
+			return $scope.processedSetupDetails;
 		}
 		
 		$scope.saveSetupRow = function(row){

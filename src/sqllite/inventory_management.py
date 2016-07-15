@@ -233,6 +233,17 @@ class ModifySetup(CommonVariables, HardwareInventory):
         CommonVariables.__init__(self)
         HardwareInventory.__init__(self)
 
+    def get_setup_details(self, args):
+        condition = create_select_arguments(args)
+        selected_columns = "serial_number,project_name,setup_ip,cores,ram,hard_disk,role,vip,storage_size,storage_ip,storage_initiator_name,storage_target_ip,comments,created_by,vm_id"
+        order_by_clause = "order by vm_id"
+        selected_columns_list = get_selected_column_list(selected_columns)
+        if condition == "":
+            result = self.sqlite_object.execute_select_query("select %s from %s,%s where %s.project_id=%s.project_id and deleted='n' and current_version='y' %s" % (selected_columns, self.table_setups, self.table_projects, self.table_setups, self.table_projects, order_by_clause))
+        else:
+            result = self.sqlite_object.execute_select_query("select %s from %s,%s where %s.project_id=%s.project_id and deleted='n' and current_version='y' and %s %s" % (selected_columns, self.table_setups, self.table_projects, self.table_setups, self.table_projects,condition, order_by_clause))
+        return create_result_map(selected_columns_list, result)
+
     def add_setup_details(self, args, columns):
         values = create_insert_arguments(args, columns)
         if values == 1:
@@ -264,7 +275,6 @@ class ModifySetup(CommonVariables, HardwareInventory):
 
 if __name__ == "__main__":
     api = sys.argv[1]
-#     print api
     try:
         args = sys.argv[2:]
     except IndexError:
@@ -289,6 +299,8 @@ if __name__ == "__main__":
             print json.dumps(hwi.get_setup_name(sys.argv[2].split('=')[1]))
         elif api == "api='validate_user'":
             print json.dumps(um.validate_user(args))
+        elif api == "api='select_setup'":
+            print json.dumps(ms.get_setup_details(args))
         elif api == "api='add_setup'":
             columns = ms.sqlite_object.get_column_names(ms.table_setups)
             print json.dumps(ms.add_setup_details(args, columns))
