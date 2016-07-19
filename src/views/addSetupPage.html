@@ -20,7 +20,7 @@
 		Hard Disk: <input type="text"  ng-model="processedHardwareDetails[0]['hard_disk']" ng-disabled="serial_number"><br/>
 	</div>
     <div class="col-sm-4 text-right">
-    	Search: <button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number)" >Search...</button><br/>
+    	Search: <button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number)" ng-disabled = "!serial_number">Search...</button><br/>
 		Manufacturer: <input type="text" ng-model="processedHardwareDetails[0]['manufacturer']" ng-disabled="serial_number"><br/>
 		Hardware Type: <input type="text" ng-model="processedHardwareDetails[0]['hardware_type']" ng-disabled="serial_number"><br/>
 		Management IP: <input type="text" ng-model="processedHardwareDetails[0]['management_ip']" ng-disabled="serial_number" ><br/>
@@ -44,7 +44,7 @@
 		VM Host: <input type="text" ng-model="processedHardwareDetails[0]['vm']" ng-disabled="disable"><br/>
 	</div>
     <div class="col-sm-4 text-right">
-    	<h4><button id=edit ng-click="saveRow(processedHardwareDetails[0])">Save</button></h4>
+    	<h4><button id=edit ng-click="saveRow(processedHardwareDetails[0])" ng-disabled="disableSaveButton">Save</button></h4>
     	Base OS IP: <input type="text" ng-model="processedHardwareDetails[0]['base_os_ip']" ng-disabled="disable"><br/>
 		Base OS Username: <input type="text" ng-model="processedHardwareDetails[0]['base_os_username']" ng-disabled="disable"><br/>
 		Base OS Password: <input type="text" ng-model="processedHardwareDetails[0]['base_os_password']" ng-disabled="disable"><br/>
@@ -52,78 +52,80 @@
   </div>
 </div>
 <hr>
-<div class="container">
+<div class="container" ng-hide="hideSetupDiv">
   <div class="row vdivide">
     <div class="col-sm-4 text-right">
     	<h4>Setup Details</h4>
 	</div>
     <div class="col-sm-4 text-right">
-    	<h4><button id=edit ng-click="getSetupDetails('serial_number',serial_number)">Get Setup Details</button></h4>
+    	<h4><button id=edit ng-click="getSetupDetails('serial_number',serial_number)">Refresh</button></h4>
     </div>
   </div>
 </div>
 
 
-<div class="container-fluid"  >
+<div class="container-fluid" ng-hide="hideSetupDiv" >
   <div class="row vdivide no-gutter">
-    <div class="col-xs-3  no-gutter text-center">
-    	<p class="col-xs-3 text-center" type="text" style="font-size:9px" >serial_number</p>
-    	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >project_name</p>
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >setup_ip</p>
-    	<p class="col-xs-2 text-center" type='text' style="font-size:9px" >cores</p>
-	</div>
-	<div class="col-xs-2 no-gutter text-center">
-    	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >ram</p>
-    	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >hard_disk</p>
-    	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >role</p>
-    	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >vip</p>
+    <div class="col-xs-10  no-gutter text-center">
+    	<!-- <p class="col-xs-3 text-center" type="text" style="font-size:11px" >serial_number</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >project_name</p> -->
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >setup_ip</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >cores</p>
+	<!-- </div>
+	<div class="col-xs-2 no-gutter text-center"> -->
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >ram</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >hard_disk</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >role</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >vip</p>
+	<!-- </div>
+	<div class="col-xs-2 text-center no-gutter"> -->
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >storage_size</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >storage_ip</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >si_name</p>
+	<!-- </div>
+	<div class="col-xs-3 text-center no-gutter"> -->
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >storage_target_ip</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >created_by</p>
+    	<p class="col-xs-1 text-center" type='text' style="font-size:11px" >Comments</p>
+    	<!-- <p class="col-xs-4 text-center" type='text' style="font-size:11px" >vm_id</p> -->
 	</div>
 	<div class="col-xs-2 text-center no-gutter">
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >storage_size</p>
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >storage_ip</p>
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >storage_initiator_name</p>
-	</div>
-	<div class="col-xs-3 text-center no-gutter">
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >storage_target_ip</p>
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >created_by</p>
-    	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >vm_id</p>
-	</div>
-	<div class="col-xs-2 text-center no-gutter">
-    	<p class="col-xs-6 text-center" type='text' style="font-size:9px" >Comments</p>
-    	<button class="col-xs-3 text-center" ></button>
-    	<button class="col-xs-3 text-center" ></button>
+    	<!-- <p class="col-xs-6 text-center" type='text' style="font-size:11px" >Comments</p> -->
+    	<button class="col-xs-3 text-center" style="font-size:9px">Save</button>
+    	<button class="col-xs-3 text-center" style="font-size:9px">Delete</button>
 	</div>
   </div>
 </div>
 
 
 
-<div class="container-fluid" ng-repeat = "row in processedSetupDetails" >
+<div class="container-fluid" ng-repeat = "row in processedSetupDetails" ng-hide="hideSetupDiv" >
   <div class="row vdivide no-gutter">
-    <div class="col-xs-3  no-gutter text-center">
-    	<input class="col-xs-3 text-center" type="text" style="font-size:9px" ng-model="row['serial_number']" ng-disabled = "false" />
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['project_name']" ng-disabled = "false" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['setup_ip']" />
-    	<input class="col-xs-2 text-center" type='text' style="font-size:9px" ng-model ="row['cores']" />
-	</div>
-	<div class="col-xs-2 no-gutter text-center">
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['ram']" />
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['hard_disk']" />
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['role']" />
-    	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['vip']" />
+    <div class="col-xs-10  no-gutter text-center">
+    	<!-- <input class="col-xs-3 text-center" type="text" style="font-size:11px" ng-model="row['serial_number']" ng-disabled = "false" />
+    	<input class="col-xs-3 text-center" type='text' style="font-size:11px" ng-model ="row['project_name']" ng-disabled = "false" /> -->
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['setup_ip']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['cores']" />
+	<!-- </div>
+	<div class="col-xs-2 no-gutter text-center"> -->
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['ram']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['hard_disk']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['role']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['vip']" />
+	<!-- </div>
+	<div class="col-xs-2 text-center no-gutter"> -->
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['storage_size']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['storage_ip']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['storage_initiator_name']" />
+	<!-- </div>
+	<div class="col-xs-3 text-center no-gutter"> -->
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['storage_target_ip']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['created_by']" />
+    	<input class="col-xs-1 text-center" type='text' style="font-size:11px" ng-model ="row['comments']" />
+    	<!-- <input class="col-xs-4 text-center" type='text' style="font-size:11px" ng-model ="row['vm_id']" ng-disabled = "false" /> -->
 	</div>
 	<div class="col-xs-2 text-center no-gutter">
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['storage_size']" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['storage_ip']" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['storage_initiator_name']" />
-	</div>
-	<div class="col-xs-3 text-center no-gutter">
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['storage_target_ip']" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['created_by']" />
-    	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['vm_id']" ng-disabled = "false" />
-	</div>
-	<div class="col-xs-2 text-center no-gutter">
-    	<input class="col-xs-6 text-center" type='text' style="font-size:9px" ng-model ="row['comments']" />
+    	
     	<button class="col-xs-3 text-center" ng-click = "saveSetupRow(row)" >S</button>
     	<button class="col-xs-3 text-center" ng-click = "deleteSetupRow(row)" >X</button>
 	</div>

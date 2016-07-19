@@ -1,4 +1,4 @@
-app.controller('hardwareInventoryController',['$scope','$http','TestService', function($scope,$http,TestService)
+app.controller('hardwareInventoryController',['$scope','$http','$document','TestService', function($scope,$http,$document,TestService)
 {
 	
 	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
@@ -20,8 +20,10 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 			qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
 		}
 		
+//		$scope.httpRequest($scope.updateRecordsURL.concat(qp));
 		$scope.httpRequest($scope.updateRecordsURL.concat(qp));
-		
+//		angular.element($document[0].getElementById('search')).scope().$apply();
+//		$document[0].getElementById('search').click()
 //		$scope.getSearchQueryParameters();
 	}
 	
@@ -38,7 +40,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 		}
 		
 		$scope.httpRequest($scope.updateRecordsURL.concat(qp));
-	
+//		$document.getElementById('search').click();
 //		$scope.getSearchQueryParameters();
 	}
 	
@@ -82,6 +84,7 @@ app.controller('hardwareInventoryController',['$scope','$http','TestService', fu
 	
 	$scope.parseHardwareDetails = function(rawData)
 	{
+		$scope.processedHardwareDetails = [];
 		$scope.processedHardwareDetails = rawData.data;
 		
 		// Creating blank row

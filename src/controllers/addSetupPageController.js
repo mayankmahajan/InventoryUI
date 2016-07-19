@@ -121,18 +121,25 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 		}
 		
 		$scope.disable = true;
+		$scope.disableSaveButton = true;
+		$scope.hideSetupDiv = true;
 		
 		$scope.onProjectChange = function(project,hardwareDetail)
 		{
 			if (project['project_name'] == hardwareDetail[0]['project_name'])
 				{
 				$scope.disable = false;
+				$scope.disableSaveButton = false;
+				$scope.getSetupDetails('serial_number',hardwareDetail[0]['serial_number'])
+				$scope.hideSetupDiv = false;
 				return true;
 				}
 			else
 				{
 				$scope.disable = true;
+				$scope.disableSaveButton = true;
 				alert("Project not matching");
+				$scope.hideSetupDiv = true;
 				return false;
 				}
 		}
@@ -208,10 +215,10 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 		$scope.parseSetupDetails = function(rawData)
 		{
 			$scope.processedSetupDetails = []
-			if ($scope.vm == "Y")
-			{
+//			if ($scope.vm == "Y")
+//			{
 			$scope.processedSetupDetails = rawData.data;
-			}
+//			}
 //			
 			
 			// Creating blank row
