@@ -29,7 +29,7 @@
   </div>
 </div>
 <hr>
-<div class="container" ng-init = "getProjects()" >
+<div class="container"  >
   <div class="row vdivide">
     <div class="col-sm-5 text-right">
     	<h4>Base Machine Details</h4>
@@ -38,7 +38,7 @@
 				style="height: 25px; vertical-align: middle"
 				ng-model="project.project_name"
 				ng-change="onProjectChange(project.project_name,processedHardwareDetails)"
-				ng-options="project as project.project_name for project in processedProjectDetails track by project.project_name">
+				ng-options="project as project.project_name for project in processedProjectDetails">
 		</select><br/>
 		Setup Name: <input type="text" ng-model="processedHardwareDetails[0]['setup_name']" ng-disabled="disable"><br/>
 		VM Host: <input type="text" ng-model="processedHardwareDetails[0]['vm']" ng-disabled="disable"><br/>

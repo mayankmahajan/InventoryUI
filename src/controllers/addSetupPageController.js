@@ -22,7 +22,10 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
 			}
 			
-			$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+			if (row['project_name'] != "" && row['vm'] != "" && row['setup_name'] != "" && row['base_os_ip'] != "" && row['base_os_username'] != "" && row['base_os_password'] != "")
+			{
+					$scope.httpRequest($scope.updateRecordsURL.concat(qp));
+			}
 			
 //			$scope.getSearchQueryParameters();
 		}
@@ -55,6 +58,8 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				qp = qp.concat(arguments[i]+"="+arguments[i+1]+"&");
 			}
 			$scope.httpRequest($scope.fetchRecordsURL.concat(qp));
+			$scope.processedProjectDetails = [];
+			$scope.getProjects();
 		}
 		
 		$scope.getProjects = function (){
@@ -130,15 +135,32 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				{
 				$scope.disable = false;
 				$scope.disableSaveButton = false;
+				
+				if (hardwareDetail[0]['vm'] && hardwareDetail[0]['setup_name'] && hardwareDetail[0]['base_os_ip'] && hardwareDetail[0]['base_os_username'] && hardwareDetail[0]['base_os_password'])
+					{
+				
+				
 				$scope.getSetupDetails('serial_number',hardwareDetail[0]['serial_number'])
 				$scope.hideSetupDiv = false;
+				if ($scope.processedSetupDetails == undefined)
+					{
+					$scope.processedSetupDetails = [];
+					}
+				object = {comments: "",cores: hardwareDetail[0]['cores'],created_by: "",hard_disk: hardwareDetail[0]['hard_disk'],project_name: hardwareDetail[0]['project_name'],ram: hardwareDetail[0]['ram'],role: "",serial_number: hardwareDetail[0]['serial_number'],setup_ip: hardwareDetail[0]['base_os_ip'],storage_initiator_name: "",storage_ip: "",storage_size: "",storage_target_ip: "",vip: "",vm_id: 0}
+				
+				$scope.processedSetupDetails.push(object);
 				return true;
-				}
+				}}
 			else
 				{
 				$scope.disable = true;
 				$scope.disableSaveButton = true;
 				alert("Project not matching");
+//				$scope.processedSetupDetails = [];
+//				
+//				object = {comments: "",cores: hardwareDetail[0]['cores'],created_by: "",hard_disk: hardwareDetail[0]['hard_disk'],project_name: hardwareDetail[0]['project_name'],ram: hardwareDetail[0]['ram'],role: "",serial_number: hardwareDetail[0]['serial_number'],setup_ip: hardwareDetail[0]['base_os_ip'],storage_initiator_name: "",storage_ip: "",storage_size: "",storage_target_ip: "",vip: "",vm_id: 0}
+//				
+//				$scope.processedSetupDetails.push(object);
 				$scope.hideSetupDiv = true;
 				return false;
 				}
@@ -163,6 +185,9 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 				if (typeof(response.data) == 'string'){
 					if (response.data == " "){
 						alert("Error");
+//						$scope.processedSetupDetails = [];
+						
+						
 					}
 					else{
 						if(!alert(response.data)){
@@ -221,12 +246,15 @@ app.controller('addSetupPageController',['$scope','$http','TestService', functio
 //			}
 //			
 			
-			// Creating blank row
+//			 Creating blank row
 			object = {};
-			keys = Object.keys(rawData.data);
-			for (var i=0; i<keys;i++){
-				object[keys[i]] =''
-			}
+//			keys = Object.keys(rawData.data);
+//			for (var i=0; i<keys;i++){
+//				object[keys[i]] =''
+//			}
+			
+			object = {comments: "",cores: $scope.processedSetupDetails[0]['cores'],created_by: "",hard_disk: $scope.processedSetupDetails[0]['hard_disk'],project_name: $scope.processedSetupDetails[0]['project_name'],ram: $scope.processedSetupDetails[0]['ram'],role: "",serial_number: $scope.processedSetupDetails[0]['serial_number'],setup_ip: $scope.processedSetupDetails[0]['base_os_ip'],storage_initiator_name: "",storage_ip: "",storage_size: "",storage_target_ip: "",vip: "",vm_id: 0};
+//			
 			$scope.processedSetupDetails.push(object);
 			
 			return $scope.processedSetupDetails;
