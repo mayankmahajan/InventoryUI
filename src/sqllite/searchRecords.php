@@ -33,8 +33,8 @@
     if($_GET["project_name"] != 'undefined'){
     	$project_name = "project_name=\'".$_GET["project_name"]."\'";
     }
-    if($_GET["hardware_type"] != 'undefined'){
-    	$hardware_type = "hardware_type=\'".$_GET["hardware_type"]."\'";
+    if($_GET["product_name"] != 'undefined'){
+    	$product_name = "product_name=\'".$_GET["product_name"]."\'";
     }
     if($_GET["setup_name"] != 'undefined'){
     	$setup_name = "setup_name=\'".$_GET["setup_name"]."\'";

@@ -76,7 +76,7 @@
     	<p>Project ID</p>
     	</div>
     	<div class="col-sm-6 text-center">
-    	<button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number,'manufacturer',manufacturer,'hardware_type',hardware_type,'management_ip',management_ip,'profile_name',profile_name,'ram',ram,'hard_disk',hard_disk,'primary_owner',primary_owner,'secondary_owner',secondary_owner,'tertiary_owner',tertiary_owner,'project_name',project_name,'setup_name',setup_name,'cores',cores)">Search</button>
+    	<button id="search" ng-click = "getSearchQueryParameters('serial_number',serial_number,'manufacturer',manufacturer,'product_name',product_name,'management_ip',management_ip,'profile_name',profile_name,'ram',ram,'hard_disk',hard_disk,'primary_owner',primary_owner,'secondary_owner',secondary_owner,'tertiary_owner',tertiary_owner,'project_name',project_name,'setup_name',setup_name,'cores',cores)">Search</button>
     	</div>
 	</div>
   </div>
@@ -94,7 +94,7 @@
 	</div>
 	<div class="col-sm-2 text-center">
     	<div class="col-sm-6 text-center">
-    	<input type='text' ng-model ="hardware_type" ng-enter="search('hardware_type',hardware_type)"/>
+    	<input type='text' ng-model ="product_name" ng-enter="search('product_name',product_name)"/>
     	</div>
     	<div class="col-sm-6 text-center">
     	<input type='text' ng-model ="management_ip" ng-enter="search('management_ip',management_ip)"/>
@@ -150,7 +150,7 @@
     	<p class="col-xs-3 text-center" type="text" style="font-size:9px" > SerialNumber</p>
     	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >management_ip</p>
     	<p class="col-xs-4 text-center" type='text' style="font-size:9px" >profile_name</p>
-    	<p class="col-xs-2 text-center" type='text' style="font-size:9px" >hardware_type</p>
+    	<p class="col-xs-2 text-center" type='text' style="font-size:9px" >product_name</p>
 	</div>
 	<div class="col-xs-2 no-gutter text-center">
     	<p class="col-xs-3 text-center" type='text' style="font-size:9px" >ram</p>
@@ -187,7 +187,7 @@
     	<input class="col-xs-3 text-center" type="text" style="font-size:9px" ng-model="row['serial_number']">
     	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['management_ip']" />
     	<input class="col-xs-4 text-center" type='text' style="font-size:9px" ng-model ="row['profile_name']" />
-    	<input class="col-xs-2 text-center" type='text' style="font-size:9px" ng-model ="row['hardware_type']" />
+    	<input class="col-xs-2 text-center" type='text' style="font-size:9px" ng-model ="row['product_name']" />
 	</div>
 	<div class="col-xs-2 no-gutter text-center">
     	<input class="col-xs-3 text-center" type='text' style="font-size:9px" ng-model ="row['ram']" />

@@ -33,8 +33,8 @@
     if($_GET["project_name"] != 'undefined'){
     	$project_name = 'project_id="\''.$_GET["project_name"].'\'"';
     }
-    if($_GET["hardware_type"] != 'undefined'){
-    	$hardware_type = 'product_name="\''.$_GET["hardware_type"].'\'"';
+    if($_GET["product_name"] != 'undefined'){
+    	$product_name = 'product_name="\''.$_GET["product_name"].'\'"';
     }
     if($_GET["setup_name"] != 'undefined'){
     	$setup_name = 'setup_name="\''.$_GET["setup_name"].'\'"';
@@ -63,6 +63,6 @@
 
 
     
-    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name $hardware_type $setup_name $base_os_ip $base_os_username $base_os_password $vm $comments $cores $created_by");
+    $result = exec("python inventory_management.py $api $serial_number $manufacturer $management_ip $profile_name $ram $hard_disk $primary_owner $secondary_owner $tertiary_owner $project_name $product_name $setup_name $base_os_ip $base_os_username $base_os_password $vm $comments $cores $created_by");
     echo $result;    
   ?>
