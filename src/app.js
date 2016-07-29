@@ -1,5 +1,5 @@
 
-var app = angular.module('invApp', ['ngRoute']);
+var app = angular.module('invApp', ['ngRoute','ngStorage']);
 app.value('isOffline', true);
 
 //This configures the routes and associates each route with a view and a controller
@@ -28,7 +28,12 @@ app.config(function ($routeProvider,$sceDelegateProvider,$interpolateProvider) {
                 controller: 'hardwareInventoryController',
                 templateUrl: 'views/hardwareInventoryPage.html'
             })
-        .otherwise({ redirectTo: '/hardwareInventoryPage' });
+        .when('/userLogin',
+            {
+                controller: 'userPageController',
+                templateUrl: 'views/userLogin.html'
+            })
+        .otherwise({ redirectTo: '/userLogin' });
 });
 
 app.directive('ngEnter', function () {

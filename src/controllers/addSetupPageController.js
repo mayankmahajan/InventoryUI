@@ -1,10 +1,18 @@
-app.controller('addSetupPageController',['$scope','$http','TestService', function($scope,$http,TestService)
+app.controller('addSetupPageController',['$scope','$http','$localStorage','TestService', function($scope,$http,$localStorage,TestService)
 {
 	
 		$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
 		$scope.updateRecordsURL = 'sqllite/updateRecords.php?'
 		$scope.fetchSetupRecordsURL = 'sqllite/searchSetupRecords.php?'
 		$scope.updateSetupRecordsURL = 'sqllite/updateSetupRecords.php?'
+		$scope.username = "mahajan"
+		$localStorage['user'] = 'mayank';
+			
+		$scope.updateUser = function(username)
+		{
+			$localStorage['user'] = $scope.username;
+		}
+		
 		
 		$scope.processedData = []
 		

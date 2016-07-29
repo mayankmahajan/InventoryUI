@@ -1,62 +1,57 @@
-<!DOCTYPE html> 
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en" ng-app="invApp">
 <head>
- <meta charset="utf-8"> 
- <meta name=viewport content="width=device-width,initial-scale=1"> 
- <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-  <title>Login</title>
-
-   <link href="css/custom.css" rel="stylesheet">
-
-   <script src="Scripts/jquery.min.js"></script>
-   <script src="Scripts/bootstrap.min.js"></script>
-   <script type="text/javascript">
-
-
-   </script>
-   <!--custom js-->
-
-  </head>
-
-     <body class='loginbody'> 
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Guavus | Inventory</title>
     
-      <div class=logo-container > 
-        <img src="images/guavusLogoLarge.png" class="guavusLogo"/>
-      </div> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.min.css" rel="stylesheet" type='text/css'>
+    <link href="css/custom.css" rel="stylesheet">
 
-      <div class="loginForm"> 
-          
-           <form class="form-signin" method="POST" role="form" id='loginForm' action='home.html'>
-               
-                <input type="username" id="username" class="form-control" placeholder="Username" required />
-                 
-                <input type="password" id="password" class="form-control" placeholder="Password" required />
-                 <div style="height: 0px">   
-                </div>
-                <div id="remember" class="checkbox remember">
-                    <label>
-                        <input type="checkbox" id="cbRememberMe" name="rememberMe" value="remember-me">Remember Username and Password 
-                    </label>
-                </div>
-                
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" id = 'submit'>Sign in</button>
-          
-            </form>
-
-      </div> 
-
-
-      <div class="disclaimer">
-              <p class="patentText">This product may be covered by one or more U.S. or foreign pending or issued patents listed at 
-                <a href=http://www.guavus.com/patents target=_blank>www.guavus.com/patents</a>
-              </p> 
-             
-              <p class="warningText">WARNING! This computer system and network is PRIVATE and PROPRIETARY and may only be accessed by authorized users. Unauthorized use of this computer system or network is strictly prohibited and may be subject to criminal prosecution, employee discipline up to and including discharge, or the termination of vendor/service contracts. The owner, or its agents, may monitor any activity or communication on the computer system or network. The owner, or its agents, may retrieve any information stored within the computer system or network. By accessing and using this computer system or network, you are consenting to such monitoring and information retrieval for law enforcement and other purposes. Users should have no expectation of privacy as to any communication on or information stored within the computer system or network, including information stored locally or remotely on a hard drive or other media in use with this computer system or network.
-              </p> 
-              <p class="rightsText"> ©2013-2015 Guavus, All Rights Reserved.<br/>Best viewed at minimum 1280 x 1024 resolution.</p> 
-             
-        </div> 
-
-    </body> 
-
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script> 
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/ngStorage.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script type="text/javascript" src='app.js'></script>
+    <script src="controllers/CommonUtil.js"></script>
+    <script src="services/dummyDataService.js"></script>
+    <script src="services/testService.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/invScreenController.js"></script>
+    <script src="controllers/addSetupPageController.js"></script>
+    <script src="controllers/hardwareInventoryController.js"></script>
+    <script src="controllers/userPageController.js"></script>
+    
+    <script src="Scripts/restangular.min.js"></script>
+</head>
+<body >
+	<div class="container">
+	  <div class="row vdivide">
+	    <div class="col-sm-2 text-center">
+	    	<a href ="" >Starting Page</a>
+		</div>
+	    <div class="col-sm-1 text-center">
+	    	<a ng-click = "editRow(row)" >Users</a>
+		</div>
+		<div class="col-sm-1 text-center">
+	    	<a ng-click = "editRow(row)" >Projects</a>
+		</div>
+		<div class="col-sm-2 text-center">
+	    	<a href="#hardwareInventoryPage" >Hardware Inventory</a>
+		</div>
+		<div class="col-sm-2 text-center">
+	    	<a href="#addSetupPage" >Add Setup Details</a>
+		</div>
+		<div class="col-sm-2 text-center">
+	    	<a href="#projectsPage" >View Setup Details</a>
+		</div>
+	  </div>
+	</div>
+	<hr>
+	<div ng-view class='mainbody'></div>
+</body>
 </html>
