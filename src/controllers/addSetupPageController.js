@@ -5,13 +5,13 @@ app.controller('addSetupPageController',['$scope','$http','$localStorage','TestS
 		$scope.updateRecordsURL = 'sqllite/updateRecords.php?'
 		$scope.fetchSetupRecordsURL = 'sqllite/searchSetupRecords.php?'
 		$scope.updateSetupRecordsURL = 'sqllite/updateSetupRecords.php?'
-		$scope.username = "mahajan"
-		$localStorage['user'] = 'mayank';
+		// $scope.username = "mahajan"
+		// $localStorage['user'] = 'mayank';
 			
-		$scope.updateUser = function(username)
-		{
-			$localStorage['user'] = $scope.username;
-		}
+		// $scope.updateUser = function(username)
+		// {
+		// 	$localStorage['user'] = $scope.username;
+		// }
 		
 		
 		$scope.processedData = []
@@ -277,6 +277,9 @@ app.controller('addSetupPageController',['$scope','$http','$localStorage','TestS
 			for (var i=0; i<keys.length; i++){
 				if (keys[i] == '$$hashkey' || keys[i] == '$$hashKey'){
 					continue;
+				}
+				if (keys[i] == 'created_by'){
+					row[keys[i]] = $localStorage['user']
 				}
 				qp = qp.concat(keys[i]+"="+row[keys[i]]+"&");
 			}

@@ -1,4 +1,4 @@
-app.controller('hardwareInventoryController',['$scope','$http','$document','TestService', function($scope,$http,$document,TestService)
+app.controller('hardwareInventoryController',['$scope','$http','$document','$localStorage','TestService', function($scope,$http,$document,$localStorage,TestService)
 {
 	
 	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
