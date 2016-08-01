@@ -13,6 +13,15 @@ app.controller('addSetupPageController',['$scope','$http','$localStorage','TestS
 		// 	$localStorage['user'] = $scope.username;
 		// }
 		
+		$scope.init = function(){
+			if ($localStorage['role'] == 'admin'){
+				// $scope.disableAddSetup = false;
+			}	
+			if ($localStorage['role'] == 'normal'){
+				$scope.disableAddSetup = true;
+				$scope.disableHardwareSetup = true;
+			}	
+		}
 		
 		$scope.processedData = []
 		

@@ -1,10 +1,20 @@
 app.controller('hardwareInventoryController',['$scope','$http','$document','$localStorage','TestService', function($scope,$http,$document,$localStorage,TestService)
 {
 	
-	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?'
-	$scope.updateRecordsURL = 'sqllite/updateRecords.php?'
+	$scope.fetchRecordsURL = 'sqllite/searchRecords.php?';
+	$scope.updateRecordsURL = 'sqllite/updateRecords.php?';
 	
-	$scope.processedData = []
+	$scope.processedData = [];
+	
+	$scope.init = function(){
+			if ($localStorage['role'] == 'admin'){
+				// $scope.disableAddSetup = false;
+			}	
+			if ($localStorage['role'] == 'normal'){
+				$scope.disableAddSetup = true;
+				$scope.disableHardwareSetup = true;
+			}	
+		}
 	
 	
 	$scope.saveRow = function(row){

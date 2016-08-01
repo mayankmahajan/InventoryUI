@@ -12,28 +12,21 @@
 }
 </style>
 
-<div class="container">
+
+<div class="container" ng-init = "init()">
       <div class="row vdivide">
         <div class="col-sm-2 text-center">
-            <a href ="" >Starting Page</a>
+            <a ng-href="#hardwareInventoryPage" ng-hide="disableHardwareSetup" >Hardware Inventory</a>
         </div>
-        <div class="col-sm-1 text-center">
-            <a ng-click = "editRow(row)" >Users</a>
-        </div>
-        <div class="col-sm-1 text-center">
-            <a ng-click = "editRow(row)" >Projects</a>
+        <div class="col-sm-2 text-center" >
+            <a href="#addSetupPage"  ng-hide="disableAddSetup">Add Setup Details</a>
         </div>
         <div class="col-sm-2 text-center">
-            <a href="#hardwareInventoryPage" >Hardware Inventory</a>
+            <a href="#viewSetupPage" >View Setup Details</a>
         </div>
-        <div class="col-sm-2 text-center">
-            <a href="#addSetupPage" >Add Setup Details</a>
-        </div>
-        <div class="col-sm-2 text-center">
-            <a href="#projectsPage" >View Setup Details</a>
-        </div>
+
       </div>
-    </div>
+</div>
 
 
 <div class="container" ng-init="getSearchQueryParameters()">
